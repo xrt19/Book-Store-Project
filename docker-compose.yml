@@ -1,0 +1,35 @@
+version: '3'
+services:
+  frontend:
+      build:
+        context: ./frontend
+        dockerfile: Dockerfile
+      ports:
+        - "5173:5173"
+      networks:
+        - store-book
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5555:5555"
+    environment:
+      # - MONGODB_URI=mongodb://store-book-mongodb-local-compose:27017/bookstore
+      - MONGODB_URI=mongodb://mongodb:27017/bookstore
+      - PORT=5555
+    depends_on:
+      - mongodb
+    networks:
+      - store-book
+  mongodb:
+    image: mongo
+    container_name: store-book-mongodb-local-compose
+    ports:
+      - "27017:27017"
+    networks:
+      - store-book
+
+networks:
+  store-book:
+    external: true
