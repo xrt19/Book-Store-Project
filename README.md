@@ -1,4 +1,25 @@
-tesss
+# Docker Containerization Practice
+
+This repository is a fork of another project that I am using to practice Docker containerization. I have created three branches, each demonstrating a different configuration setup:
+
+## Branches
+
+1. **non-compose with online MongoDB**  
+   In this branch, the containerized application connects to an online MongoDB instance without using Docker Compose.
+
+2. **non-compose with local MongoDB**  
+   In this branch, the application is containerized and connects to a MongoDB instance running locally, again without Docker Compose.
+
+3. **compose with local MongoDB**  
+   In this branch, Docker Compose is used to orchestrate both the application container and a local MongoDB container for a fully integrated setup.
+
+## Usage
+
+- Switch to the desired branch based on the configuration you wish to experiment with.
+- Follow the instructions provided in each branch’s documentation (if available) for building and running the containers.
+- These branches are intended for learning purposes, showcasing different approaches to managing database connectivity and container orchestration with Docker.
+
+Happy containerizing!
 
 ===
 
